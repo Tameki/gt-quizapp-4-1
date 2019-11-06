@@ -1,5 +1,6 @@
 package com.geektech.quizapp_4_1.settings;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +33,14 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getActivity();
-        mViewModel = ViewModelProviders.of(this).get(SettingsViewModel.class);
+        mViewModel = ViewModelProviders.of(getActivity()).get(SettingsViewModel.class);
+
+        mViewModel.title.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Log.d("ololo", "Settings fragment " + s);
+            }
+        });
     }
 
 }
