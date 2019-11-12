@@ -1,8 +1,5 @@
 package com.geektech.quizapp_4_1.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class QuizRepository implements IQuizRepository {
 
     @Override

@@ -36,36 +36,10 @@ public class MainActivity extends AppCompatActivity
     private MainPagerAdapter mAdapter;
     private BottomNavigationView mBottomNav;
 
-    private MainViewModel mMainViewModel;
-    private HistoryViewModel mHistoryViewModel;
-    private SettingsViewModel mSettingsViewModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mMainViewModel = ViewModelProviders.of(this)
-                .get(MainViewModel.class);
-        mHistoryViewModel = ViewModelProviders.of(this)
-                .get(HistoryViewModel.class);
-        mSettingsViewModel = ViewModelProviders.of(this)
-                .get(SettingsViewModel.class);
-
-        mHistoryViewModel.title.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                Log.d("ololo", "Main activirty " + s);
-                mSettingsViewModel.onHistoryCleared();
-            }
-        });
-
-        mSettingsViewModel.title.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                Log.d("ololo", "Main activity " + s);
-            }
-        });
 
         mViewPager = findViewById(R.id.main_view_pager);
         mBottomNav = findViewById(R.id.main_bottom_nav);
@@ -90,25 +64,6 @@ public class MainActivity extends AppCompatActivity
                 }
 
                 mBottomNav.setSelectedItemId(selectedItem);
-            }
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        new QuizRepository().getQuiz(new IQuizRepository.OnQuizCallback() {
-            @Override
-            public void onSuccess(List<Question> questions) {
-                for (Question question : questions) {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Exception e) {
-                Log.d("ololo", "Failed: " + e.getMessage());
             }
         });
     }

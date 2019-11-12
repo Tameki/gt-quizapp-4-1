@@ -5,18 +5,14 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.geektech.quizapp_4_1.R;
+import com.geektech.quizapp_4_1.core.CoreFragment;
 
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends CoreFragment {
 
     private SettingsViewModel mViewModel;
 
@@ -25,9 +21,8 @@ public class SettingsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.settings_fragment, container, false);
+    protected int getLayoutId() {
+        return R.layout.fragment_settings;
     }
 
     @Override
