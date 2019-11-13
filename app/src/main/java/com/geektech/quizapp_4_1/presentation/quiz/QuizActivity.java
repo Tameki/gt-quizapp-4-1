@@ -1,4 +1,4 @@
-package com.geektech.quizapp_4_1.quiz;
+package com.geektech.quizapp_4_1.presentation.quiz;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +27,8 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        getIntent().getIntExtra(EXTRA_AMOUNT, 5);
 
         mViewModel = ViewModelProviders.of(this)
                 .get(QuizViewModel.class);

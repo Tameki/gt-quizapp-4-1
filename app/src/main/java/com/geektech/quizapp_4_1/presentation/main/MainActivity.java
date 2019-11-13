@@ -1,33 +1,22 @@
-package com.geektech.quizapp_4_1.main;
+package com.geektech.quizapp_4_1.presentation.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
 
 import com.geektech.quizapp_4_1.R;
-import com.geektech.quizapp_4_1.data.IQuizRepository;
-import com.geektech.quizapp_4_1.data.QuizRepository;
-import com.geektech.quizapp_4_1.history.HistoryFragment;
-import com.geektech.quizapp_4_1.history.HistoryViewModel;
-import com.geektech.quizapp_4_1.model.Question;
-import com.geektech.quizapp_4_1.settings.SettingsFragment;
-import com.geektech.quizapp_4_1.settings.SettingsViewModel;
+import com.geektech.quizapp_4_1.presentation.history.HistoryFragment;
+import com.geektech.quizapp_4_1.presentation.history.HistoryViewModel;
+import com.geektech.quizapp_4_1.presentation.settings.SettingsFragment;
+import com.geektech.quizapp_4_1.presentation.settings.SettingsViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener {

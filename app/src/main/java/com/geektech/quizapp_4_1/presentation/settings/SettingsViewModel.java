@@ -1,4 +1,4 @@
-package com.geektech.quizapp_4_1.settings;
+package com.geektech.quizapp_4_1.presentation.settings;
 
 
 import androidx.lifecycle.ViewModel;

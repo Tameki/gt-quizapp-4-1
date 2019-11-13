@@ -1,7 +1,6 @@
-package com.geektech.quizapp_4_1.main;
+package com.geektech.quizapp_4_1.presentation.main;
 
 import androidx.appcompat.widget.AppCompatSeekBar;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 
@@ -15,13 +14,11 @@ import android.widget.TextView;
 
 import com.geektech.quizapp_4_1.R;
 import com.geektech.quizapp_4_1.core.CoreFragment;
-import com.geektech.quizapp_4_1.quiz.QuizActivity;
+import com.geektech.quizapp_4_1.presentation.quiz.QuizActivity;
 
 import org.angmarch.views.NiceSpinner;
 
 public class MainFragment extends CoreFragment {
-
-    private MainViewModel mViewModel;
 
     private AppCompatSeekBar mSeekBar;
     private NiceSpinner mCategorySpinner;
@@ -40,13 +37,6 @@ public class MainFragment extends CoreFragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(getActivity())
-                .get(MainViewModel.class);
-    }
-
-    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mSeekBar = view.findViewById(R.id.main_amount_seek_bar);
@@ -62,14 +52,9 @@ public class MainFragment extends CoreFragment {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
+            public void onStartTrackingTouch(SeekBar seekBar) { }
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) { }
         });
 
         mStart.setOnClickListener(new View.OnClickListener() {

@@ -1,4 +1,4 @@
-package com.geektech.quizapp_4_1.history;
+package com.geektech.quizapp_4_1.presentation.history;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -6,16 +6,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.geektech.quizapp_4_1.R;
 import com.geektech.quizapp_4_1.core.CoreFragment;
-import com.geektech.quizapp_4_1.main.MainActivity;
 
 public class HistoryFragment extends CoreFragment {
 
@@ -27,7 +22,7 @@ public class HistoryFragment extends CoreFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.history_fragment;
+        return R.layout.fragment_history;
     }
 
     @Override
