@@ -8,7 +8,7 @@ public interface IQuizRepository {
     void getQuiz(OnQuizCallback callback);
 
     interface OnQuizCallback {
-        void onSuccess(List<Question> questions);
+        void onSuccess(List<Question> result);
 
         void onFailure(Exception e);
     }

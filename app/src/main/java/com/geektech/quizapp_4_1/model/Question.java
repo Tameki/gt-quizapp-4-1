@@ -12,12 +12,13 @@ public class Question {
     private String type;
     private String difficulty;
     private String question;
-
     @SerializedName("correct_answer")
     private String correctAnswer;
-
     @SerializedName("incorrect_answers")
     private List<String> incorrectAnswers;
+
+
+    private List<String> answers;
 
     public Question(String category, String type, String difficulty, String question, String correctAnswer, List<String> incorrectAnswers) {
         this.category = category;
@@ -26,6 +27,14 @@ public class Question {
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.incorrectAnswers = incorrectAnswers;
+    }
+
+    public List<String> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
     }
 
     public String getCategory() {

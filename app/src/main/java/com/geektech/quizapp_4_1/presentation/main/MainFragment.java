@@ -60,6 +60,12 @@ public class MainFragment extends CoreFragment {
         mStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Integer categoryId = null;
+
+                if (mCategorySpinner.getSelectedIndex() != 0) {
+                    categoryId = mCategorySpinner.getSelectedIndex() + 8;
+                }
+
                 QuizActivity.start(
                         getContext(),
                         mSeekBar.getProgress(),
