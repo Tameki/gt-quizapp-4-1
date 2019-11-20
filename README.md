@@ -25,7 +25,5 @@
 - [Reddit](https://www.reddit.com/r/androiddev/comments/9cc3en/why_use_singleliveevent_livedata_at_all/)
 
 #### Room
-- TODO
 
 #### Repository
-- TODO
