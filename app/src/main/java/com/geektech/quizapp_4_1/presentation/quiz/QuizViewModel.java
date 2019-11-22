@@ -41,7 +41,12 @@ public class QuizViewModel extends ViewModel {
     }
 
     void onAnswerClick(int questionPosition, int answerPosition) {
+
         //TODO: Add answer position field to Question model and update on answer selected
+    }
+
+    void onBackPressed() {
+
     }
 
     void onSkipClick() {

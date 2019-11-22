@@ -17,6 +17,7 @@ public class Question {
     @SerializedName("incorrect_answers")
     private List<String> incorrectAnswers;
 
+    private int selectedAnswerPosition;
 
     private List<String> answers;
 

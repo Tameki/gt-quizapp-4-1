@@ -33,6 +33,11 @@ public class QuizActivity extends AppCompatActivity
         context.startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        mViewModel.onBackPressed();
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class QuizActivity extends AppCompatActivity
         mViewModel.questions.observe(this, questions -> {
             Log.d("ololo", "Questions size " + questions.size());
             mAdapter.setQuestions(questions);
+
         });
 
         mViewModel.currentQuestionPosition.observe(this, position -> {
@@ -54,6 +60,10 @@ public class QuizActivity extends AppCompatActivity
         });
 
         mViewModel.finishEvent.observe(this, aVoid -> finish());
+
+        mViewModel.openResultEvent.observe(this, aVoid -> {
+            //TODO: Open Result activity
+        });
 
         int amount = getIntent().getIntExtra(EXTRA_AMOUNT, 5);
         String difficulty = getIntent().getStringExtra(EXTRA_DIFFICULTY);
