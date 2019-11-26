@@ -1,6 +1,7 @@
 package com.geektech.quizapp_4_1.model;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -17,9 +18,10 @@ public class Question {
     @SerializedName("incorrect_answers")
     private List<String> incorrectAnswers;
 
-    private int selectedAnswerPosition;
-
     private List<String> answers;
+
+    @Nullable
+    private Integer selectedAnswerPosition = null;
 
     public Question(String category, String type, String difficulty, String question, String correctAnswer, List<String> incorrectAnswers) {
         this.category = category;
@@ -84,6 +86,15 @@ public class Question {
 
     public void setIncorrectAnswers(List<String> incorrectAnswers) {
         this.incorrectAnswers = incorrectAnswers;
+    }
+
+    @Nullable
+    public Integer getSelectedAnswerPosition() {
+        return selectedAnswerPosition;
+    }
+
+    public void setSelectedAnswerPosition(int selectedAnswerPosition) {
+        this.selectedAnswerPosition = selectedAnswerPosition;
     }
 
     @NonNull

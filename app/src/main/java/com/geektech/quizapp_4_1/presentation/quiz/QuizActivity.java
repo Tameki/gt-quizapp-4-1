@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,8 +62,8 @@ public class QuizActivity extends AppCompatActivity
 
         mViewModel.finishEvent.observe(this, aVoid -> finish());
 
-        mViewModel.openResultEvent.observe(this, aVoid -> {
-            //TODO: Open Result activity
+        mViewModel.openResultEvent.observe(this, resultId -> {
+            //TODO: Open Result activity with resultId
         });
 
         int amount = getIntent().getIntExtra(EXTRA_AMOUNT, 5);
