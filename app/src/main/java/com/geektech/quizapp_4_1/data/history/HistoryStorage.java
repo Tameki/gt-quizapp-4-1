@@ -34,11 +34,13 @@ public class HistoryStorage {
             ArrayList<ShortQuizResult> shortQuizResults = new ArrayList<>();
 
             for (QuizResult quizResult : quizResults) {
+                String category = quizResult.getQuestions().get(0).getCategory();
+
                 shortQuizResults.add(new ShortQuizResult(
-                        quizResult.getId(),
-                        quizResult.getQuestions().size(),
-                        quizResult.getCorrectAnswers(),
-                        quizResult.getCreatedAt()
+                    quizResult.getId(),
+                    quizResult.getQuestions().size(),
+                    quizResult.getCorrectAnswers(),
+                    quizResult.getCreatedAt()
                 ));
             }
 

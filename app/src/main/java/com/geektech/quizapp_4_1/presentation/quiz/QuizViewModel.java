@@ -58,6 +58,14 @@ public class QuizViewModel extends ViewModel {
         openResultEvent.setValue(resultId);
     }
 
+    private void moveToQuestionOrFinish(int position) {
+        if (position == mQuestions.size()) {
+            finishQuiz();
+        } else {
+            currentQuestionPosition.setValue(position);
+        }
+    }
+
     void init(Integer amount, Integer categoryId, String difficulty) {
         currentQuestionPosition.setValue(0);
 
@@ -88,11 +96,7 @@ public class QuizViewModel extends ViewModel {
 
         questions.setValue(mQuestions);
 
-        if (questionPosition == mQuestions.size() - 1) {
-            finishQuiz();
-        } else {
-            currentQuestionPosition.setValue(questionPosition + 1);
-        }
+        moveToQuestionOrFinish(questionPosition + 1);
     }
 
     void onBackPressed() {
